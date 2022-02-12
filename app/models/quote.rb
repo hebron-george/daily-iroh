@@ -1,4 +1,6 @@
 require 'faraday'
+require 'json'
+require 'ostruct'
 
 class Quote
   def self.qotd
