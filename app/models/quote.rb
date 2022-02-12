@@ -8,7 +8,7 @@ class Quote
     body     = JSON.parse(response.body)
     return OpenStruct.new(message: body, author: "Unsuccessful response from API") unless response.success?
 
-    quote   = body.dig('contents', 'quotes').first
+    quote   = body.dig('contents', 'quotes').sample
     message = quote.dig('quote')
     author  = quote.dig('author')
     OpenStruct.new(message: message, author: author)
